@@ -1,3 +1,5 @@
-module.exports = {
-    mongoURI:'mongodb://Zia123:Zia123@headsup-shard-00-00-vpu0v.gcp.mongodb.net:27017,headsup-shard-00-01-vpu0v.gcp.mongodb.net:27017,headsup-shard-00-02-vpu0v.gcp.mongodb.net:27017/test?ssl=true&replicaSet=HeadsUp-shard-0&authSource=admin&retryWrites=true'
-};
+if (process.env.NODE_ENV === 'production') {
+  module.exports = require('./keys_prod');
+} else {
+  module.exports = require('./keys_dev');
+}
